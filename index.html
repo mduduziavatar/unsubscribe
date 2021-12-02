@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Get Selected Option Text</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#test').hide();
+    $("select#rdd").change(function(){
+        var selectedReason = $(this).children("option:selected").val();
+        
+        alert("You have selected this reason - " + selectedReason);
+        if (selectedReason == "I’ve got another reason") {
+            $('#test').show();
+        }
+        else {
+            $('#test').hide();
+        }
+    });
+});
+</script>
+</head> 
+<body>
+    <form>
+        <select id="rdd" name="Unsubscribe_Reason" style="width: 250px; height: 22px">
+            <option value="">Select a reason</option>
+            <option value="Your emails are too frequent">Your emails are too frequent</option>
+            <option value="Your emails are not relevant to me">Your emails are not relevant to me</option>
+            <option value="I don't enjoy the content of your emails">I don't enjoy the content of your emails</option>
+            <option value="I don't remember signing up for this">I don't remember signing up for this</option>
+            <option id="another" value="I’ve got another reason">I’ve got another reason...</option>
+            
+          </select>
+          <Input type="text" id="test"></Input>
+    </form>
+</body>
+</html>
+
+WFS_Unsubscribe_Data_%%Year%%%%Month%%%%Day%%.txt
